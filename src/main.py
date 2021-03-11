@@ -8,6 +8,8 @@ from tensorflow.keras import layers
 
 """
 ## Prepare the data
+We use numpy to get the data ready for the ML model.
+More about numpy: https://numpy.org/doc/stable/user/absolute_beginners.html
 """
 
 # Model / data parameters
@@ -38,6 +40,7 @@ This section defines the model. Try to see what happens to the training and vali
 the number of layers and/or the number of filters in each layer. 
 
 The number of filters is changed by changing the first parameter in layers.Conv2D(numberOfFilters). Try 8, 16, 32 or 64
+More about Convolution layers: https://keras.io/api/layers/convolution_layers/convolution2d/
 
 Another parameter that can be changed is the activation. Try with "relu" or "sigmoid". 
 More activation functions: https://keras.io/api/layers/activations/
@@ -65,6 +68,7 @@ batch_size = 128
 epochs = 15
 
 # Try with different optimizers, "sgd" or "adam"
+# More about optimizers: https://keras.io/api/optimizers/
 model.compile(loss="categorical_crossentropy", optimizer="sgd", metrics=["accuracy"])
 
 model.fit(x_train, y_train, batch_size=batch_size, epochs=epochs, validation_split=0.1)
